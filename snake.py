@@ -9,8 +9,9 @@ Exercises
 
 """
 
-from turtle import update, ontimer, setup, hideturtle, tracer, listen, onkey
-from random import randrange, done, clear
+from turtle import update, ontimer, setup, hideturtle, tracer, listen, onkey, \
+    done, clear
+from random import randrange
 from freegames import square, vector
 
 food = vector(0, 0)
