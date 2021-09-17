@@ -68,7 +68,7 @@ def move():
 
     square(food.x, food.y, 9, foodColor)
     update()
-    ontimer(move, 100)
+    ontimer(move, 50)
 
 
 music = Thread(target=musica)
