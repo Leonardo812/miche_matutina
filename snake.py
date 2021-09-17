@@ -9,13 +9,20 @@ Exercises
 
 """
 
-from turtle import update, ontimer, setup, hideturtle, tracer, listen, onkey
-from random import randrange, done, clear
+from turtle import update, ontimer, setup, hideturtle, tracer, listen, onkey, \
+    done, clear
+from random import randrange
 from freegames import square, vector
+from playsound import playsound
+from threading import Thread
 
 food = vector(0, 0)
 snake = [vector(10, 0)]
 aim = vector(0, -10)
+
+
+def musica():
+    playsound('musica.mp3')
 
 
 def change(x, y):
@@ -58,6 +65,9 @@ def move():
     ontimer(move, 100)
 
 
+music = Thread(target=musica)
+music.daemon = True
+music.start()
 setup(420, 420, 370, 0)
 hideturtle()
 tracer(False)
