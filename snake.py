@@ -55,11 +55,11 @@ def move():
         movedFood = False
         while(not movedFood):
             new_direction = randrange(1, 5)
-            if new_direction == 1 and food.x + 15 <= 140:
+            if new_direction == 1 and food.x + 15 <= 90:
                 food.x += 10
                 movedFood = True
 
-            elif new_direction == 3 and food.x - 15 >= -150:
+            elif new_direction == 3 and food.x - 15 >= -100:
                 food.x -= 10
                 movedFood = True
     clear()
