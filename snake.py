@@ -11,13 +11,16 @@ from threading import Thread
 food = vector(0, 0)
 snake = [vector(10, 0)]
 aim = vector(0, -10)
+colors = ["red", "blue", "yellow", "orange"]
+snakeColor = choice(colors)
+foodColor = snakeColor
+while(foodColor == snakeColor):
+    foodColor = choice(colors)
 
 
 def musica():
     playsound('musicaF.mid')
 
-def colores():
-    colores=["red","black","yellow","orange"]
 
 def change(x, y):
     "Change snake direction."
@@ -42,19 +45,28 @@ def move():
 
     snake.append(head)
 
-    if head == food:
+    if abs(head - food) < 15:
         print('Snake:', len(snake))
         food.x = randrange(-15, 15) * 10
         food.y = randrange(-15, 15) * 10
     else:
         snake.pop(0)
+        "Movimineto de la comida"
+        movedFood = False
+        while(not movedFood):
+            new_direction = randrange(1, 5)
+            if new_direction == 1 and food.x + 15 <= 140:
+                food.x += 10
+                movedFood = True
 
+            elif new_direction == 3 and food.x - 15 >= -150:
+                food.x -= 10
+                movedFood = True
     clear()
-
     for body in snake:
         square(body.x, body.y, 9, 'black')
 
-    square(food.x, food.y, 9, 'green')
+    square(food.x, food.y, 9, foodColor)
     update()
     ontimer(move, 100)
 
