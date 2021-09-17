@@ -3,7 +3,7 @@ Juego de la serpiente
 """
 from turtle import update, ontimer, setup, hideturtle, tracer, listen, onkey, \
     done, clear
-from random import randrange, choice
+from random import randrange
 from freegames import square, vector
 from playsound import playsound
 from threading import Thread
