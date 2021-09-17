@@ -3,7 +3,7 @@ Juego de la serpiente
 """
 from turtle import update, ontimer, setup, hideturtle, tracer, listen, onkey, \
     done, clear
-from random import randrange, choice
+from random import randrange
 from freegames import square, vector
 from playsound import playsound
 from threading import Thread
@@ -16,8 +16,6 @@ aim = vector(0, -10)
 def musica():
     playsound('musicaF.mid')
 
-def colores():
-    colores=["red","black","yellow","orange"]
 
 def change(x, y):
     "Change snake direction."
