@@ -1,17 +1,9 @@
-"""Snake, classic arcade game.
-
-Exercises
-
-1. How do you make the snake faster or slower?
-2. How can you make the snake go around the edges?
-3. How would you move the food?
-4. Change the snake to respond to arrow keys.
-
 """
-
+Juego de la serpiente
+"""
 from turtle import update, ontimer, setup, hideturtle, tracer, listen, onkey, \
     done, clear
-from random import randrange
+from random import randrange, choice
 from freegames import square, vector
 from playsound import playsound
 from threading import Thread
@@ -22,8 +14,10 @@ aim = vector(0, -10)
 
 
 def musica():
-    playsound('musica.mp3')
+    playsound('musicaF.mid')
 
+def colores():
+    colores=["red","black","yellow","orange"]
 
 def change(x, y):
     "Change snake direction."
